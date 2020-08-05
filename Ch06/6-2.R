@@ -12,5 +12,5 @@ conn <- mongolite::mongo(url = 'mongodb://kdw:1234@192.168.50.82:27017/kdw',
                          verbose = TRUE,
                          options = ssl_options())
 
-df_movies <- conn$find()
+df_movies <- conn$find(query = '{"code" : "171539"}')
 View(df_movies)
