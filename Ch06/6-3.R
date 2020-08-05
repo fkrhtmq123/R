@@ -8,5 +8,4 @@ library(rwebhdfs)
 hdfs <- webhdfs('192.168.100.101', 50070, 'root')
 
 #¿¡·¯³²
-df_moviesDF <- read_file(hdfs, '/sample/moviesDF/part-00000-5d283ee2-fe35-490d-a624-5aa0b04dfde9-c000.csv')
-
+df_moviesDF <- read_file("/sample/moviesDF/part-00000-5d283ee2-fe35-490d-a624-5aa0b04dfde9-c000.csv", hdfs)
