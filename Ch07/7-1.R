@@ -40,8 +40,11 @@ for(n in 1:nrow(df_busan_birth)) {
 #컬럼명 다시 수정
 names(df_new_busan) <- c('region', 'years', 'birth')
 
+df_new_busan$birth <- as.numeric(df_new_busan$birth)
+df_new_busan$years <- as.numeric(df_new_busan$years)
+
 #데이터 시각화
 ggplot(data = df_new_busan, aes(x=years, y=birth, group=region), size=3) + 
-  geom_line(aes(color=region)) +  scale_y_continuous(breaks=c(0, 1000, 2000, 3000, 4000))
-
-
+  geom_line(aes(color=region)) + 
+  scale_y_continuous(breaks = seq(0, 5000, 500)) + 
+  scale_x_continuous(breaks = seq(0, 2018, 1))
